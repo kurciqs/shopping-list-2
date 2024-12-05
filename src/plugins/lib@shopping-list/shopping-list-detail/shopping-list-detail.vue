@@ -45,7 +45,10 @@ export default {
 
   methods: {
     async updateShoppingList() {
-      const { data: { data: shoppingLists } } = await axios.get('/api/v1/shopping-lists')
+      // const { data: { data: shoppingLists } } = await axios.get('/api/v1/shopping-lists') /*toto nejak nejde na vercel*/
+      const response = await axios.get('https://shoppinglist.wezeo.dev/cms/api/v1/shopping-lists/')
+			console.log(response)
+			const shoppingLists = response.data.data
       this.shoppingList = shoppingLists.find(({ id }) => id == this.$route.params.id)
       console.log(this.shoppingList)
     },
