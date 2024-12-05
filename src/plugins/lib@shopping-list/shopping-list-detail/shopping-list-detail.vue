@@ -35,7 +35,6 @@ export default {
   },
 
   async mounted() {
-    console.log("Mounting")
     try {
       this.updateShoppingList();
     } catch (error) {
@@ -46,7 +45,6 @@ export default {
 
   methods: {
     async updateShoppingList() {
-      console.log("Updating list")
       const { data: { data: shoppingLists } } = await axios.get('/api/v1/shopping-lists')
       this.shoppingList = shoppingLists.find(({ id }) => id == this.$route.params.id)
       console.log(this.shoppingList)
