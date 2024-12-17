@@ -52,3 +52,20 @@ export default {
 	}
 }
 </script>
+
+<style scoped>
+
+a {
+  color: inherit; 
+  text-decoration: none; 
+}
+
+a:hover {
+  color: red; 
+}
+
+a:visited {
+  color: gray; 
+}
+
+</style>
